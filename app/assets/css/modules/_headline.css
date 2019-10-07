@@ -40,4 +40,10 @@
     &--b-margin-small {
         margin-bottom: .5em;
     }
+
+    &--no-t-margin {
+        @mixin atMedium {
+            margin-top: 0;
+        }
+    }
 }

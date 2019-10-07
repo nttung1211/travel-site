@@ -465,6 +465,23 @@ img {
     height: auto;
 }
 
+p {
+    line-height: 1.65;
+    margin: 1.8rem 0;
+}
+
+@media (min-width: 530px) {
+
+p {
+        font-size: 1.125rem
+}
+    }
+
+a {
+    color: #d59541;
+    font-weight: bold;
+}
+
 .large-hero {
     position: relative;
     border-bottom: 10px solid #2f5572;
@@ -537,7 +554,7 @@ img {
 
 @media (min-width: 530px) {
 
-.btn--large {
+.btn--large { 
             font-size: 1.25rem
     }
     }
@@ -634,6 +651,13 @@ img {
         margin-bottom: .5em;
     }
 
+@media (min-width: 800px) {
+
+.headline--no-t-margin {
+            margin-top: 0
+    }
+    }
+
 .row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -664,7 +688,7 @@ img {
 }
 
         .row__4-of-12 {
-            width: 33.33%;
+            width: 33.33%; 
         }
 
         .row__8-of-12 {
@@ -678,4 +702,4 @@ img {
         .row__8-of-12--smaller {
             width: 63%;
         }
-    }
+    } 
