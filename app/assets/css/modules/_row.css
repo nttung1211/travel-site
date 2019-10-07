@@ -1,0 +1,33 @@
+.row {
+    display: flex;
+    flex-direction: column;
+    
+    &--gutters {
+        margin-right: -65px;
+    }
+    
+    &--gutters > div{
+        padding-right: 65px;
+    }
+    
+    @mixin atMedium {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        &__4-of-12 {
+            width: 33.33%; 
+        }
+
+        &__8-of-12 {
+            width: 66.66%;
+        }
+        
+        &__4-of-12--larger {
+            width: 37%;
+        }
+
+        &__8-of-12--smaller {
+            width: 63%;
+        }
+    }
+}
