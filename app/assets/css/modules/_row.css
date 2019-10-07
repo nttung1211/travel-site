@@ -5,6 +5,14 @@
     &--gutters {
         margin-right: -65px;
     }
+
+    &--gutters-large {
+        margin-right: -100px;
+    }
+
+    &--gutters-large > div {
+        padding-right: 100px;
+    } 
     
     &--gutters > div{
         padding-right: 65px;
@@ -13,6 +21,10 @@
     @mixin atMedium {
         flex-direction: row;
         flex-wrap: wrap;
+
+        &__6-of-12 {
+            width: 50%; 
+        }
 
         &__4-of-12 {
             width: 33.33%; 

@@ -42,6 +42,10 @@
     }
 
     &--no-t-margin {
+        margin-top: 0;
+    }
+
+    &--no-t-margin-til-medium {
         @mixin atMedium {
             margin-top: 0;
         }

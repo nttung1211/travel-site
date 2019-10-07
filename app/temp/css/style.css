@@ -651,9 +651,13 @@ a {
         margin-bottom: .5em;
     }
 
+.headline--no-t-margin {
+        margin-top: 0;
+    }
+
 @media (min-width: 800px) {
 
-.headline--no-t-margin {
+.headline--no-t-margin-til-medium {
             margin-top: 0
     }
     }
@@ -672,6 +676,14 @@ a {
         margin-right: -65px;
     }
 
+.row--gutters-large {
+        margin-right: -100px;
+    }
+
+.row--gutters-large > div {
+        padding-right: 100px;
+    }
+
 .row--gutters > div{
         padding-right: 65px;
     }
@@ -686,6 +698,10 @@ a {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap
 }
+
+        .row__6-of-12 {
+            width: 50%; 
+        }
 
         .row__4-of-12 {
             width: 33.33%; 
@@ -702,4 +718,83 @@ a {
         .row__8-of-12--smaller {
             width: 63%;
         }
-    } 
+    }
+
+.section-title {
+    font-size: 2.6rem;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 0;
+}
+
+.section-title strong {
+        font-weight: 500;
+    }
+
+@media (min-width: 530px) {
+
+.section-title {
+        font-size: 3.75rem
+}
+    }
+
+.section-title__image {
+        display: block;
+        margin: 0 auto .6rem auto;
+    }
+
+@media (min-width: 530px) {
+
+.section-title__image {
+            margin: 0 0.5rem;
+            display: inline-block
+    }
+    }
+
+.feature-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+}
+
+@media (min-width: 530px) {
+
+.feature-item {
+        padding-left: 94px
+}
+    }
+
+.feature-item__icon {
+        display: block;
+        margin: auto;
+    }
+
+@media (min-width: 530px) {
+
+.feature-item__icon {
+            position: absolute;
+            left: 0
+    }
+    }
+
+.feature-item__title {
+        font-size: 1.6rem;
+        font-weight: 300;
+        margin-bottom: .8rem;
+        margin-top: .7em;
+        text-align: center;
+    }
+
+@media (min-width: 530px) {
+
+.feature-item__title {
+            -moz-text-align-last: left;
+                 text-align-last: left;
+            font-size: 1.875rem;
+            margin-top: 1em
+    }
+    }
+
+.feature-item__content {
+        font-weight: 300;
+        margin-top: 0;
+    }
