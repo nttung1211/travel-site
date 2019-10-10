@@ -15,8 +15,12 @@
         display: block;
         margin: 0 auto .6rem auto;
         @mixin atSmall {
-            margin: 0 0.5rem;
+            margin: 0 0.6rem;
             display: inline-block;
         }
+    }
+
+    &--blue {
+        color: $blue;
     }
 }

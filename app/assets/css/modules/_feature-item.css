@@ -24,7 +24,7 @@
         text-align: center;
 
         @mixin atSmall {
-            text-align-last: left;
+            text-align: left;
             font-size: 1.875rem;
             margin-top: 1em;
         }

@@ -1,24 +1,28 @@
 .row {
     display: flex;
     flex-direction: column;
+
+    &--t-padding {
+        padding-top: 80px;
+    }
     
     &--gutters {
-        margin-right: -65px;
+        margin-right: -4%;
+    }
+    
+    &--gutters > div{
+        padding-right: 4%;
     }
 
     &--gutters-large {
-        margin-right: -100px;
+        margin-right: -8%;
     }
 
     &--gutters-large > div {
-        padding-right: 100px;
+        padding-right: 8%;
     } 
     
-    &--gutters > div{
-        padding-right: 65px;
-    }
-    
-    @mixin atMedium {
+    @mixin atLarge {
         flex-direction: row;
         flex-wrap: wrap;
 
