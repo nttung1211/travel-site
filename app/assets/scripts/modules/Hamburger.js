@@ -13,6 +13,7 @@ class Hamburger {
     toggleRightSide() {
         this.rightSide.classList.toggle(`header__right-side--visible`);
         this.header.classList.toggle(`header--is-expanded`);
+        this.hamburger.classList.toggle(`hamburger--cross`);
     }
 }
 

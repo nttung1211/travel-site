@@ -2,7 +2,7 @@
     position: absolute;
     z-index: 1;
     width: 100%;
-    transition: background .5s ease-out;
+    transition: background .3s ease-out;
     
     @mixin atLarge {
         background: rgba($blue, .3);
@@ -31,7 +31,7 @@
         transform: scale(1.2);
         padding-bottom: 20px;
         text-align: center;
-        transition: .5s ease-out;
+        transition: .3s ease-out;
         position: relative;
         padding-top: 80px;
         

@@ -4,5 +4,5 @@
 
 import Hamburger from './modules/Hamburger.js';
 
-let hamburger = new Hamburger();
+let myHamburger = new Hamburger();
 

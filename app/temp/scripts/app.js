@@ -76,7 +76,7 @@ var _Hamburger2 = _interopRequireDefault(_Hamburger);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var hamburger = new _Hamburger2.default(); // let man = require(`./modules/Person`);
+var myHamburger = new _Hamburger2.default(); // let man = require(`./modules/Person`);
 // import Person from './modules/Person.js';
 // import $ from 'jquery';
 
@@ -115,6 +115,7 @@ var Hamburger = function () {
         value: function toggleRightSide() {
             this.rightSide.classList.toggle("header__right-side--visible");
             this.header.classList.toggle("header--is-expanded");
+            this.hamburger.classList.toggle("hamburger--cross");
         }
     }]);
 
