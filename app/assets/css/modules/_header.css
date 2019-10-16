@@ -1,0 +1,88 @@
+.header {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    transition: background .5s ease-out;
+    
+    @mixin atLarge {
+        background: rgba($blue, .3);
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: unset;
+        flex-direction: column;
+        
+        @mixin atLarge {
+            justify-content: flex-end;
+            flex-direction: row;
+        }
+    }
+
+    &--is-expanded {
+        background: rgba($blue, .5);        
+    }
+    
+    &__right-side {
+        z-index: -1;
+        opacity: 0;
+        transform: scale(1.2);
+        padding-bottom: 20px;
+        text-align: center;
+        transition: .5s ease-out;
+        position: relative;
+        padding-top: 80px;
+        
+        @mixin atSmall {
+            padding-top: 105px;
+        }
+        
+        @mixin atLarge {
+            z-index: unset;
+            opacity: 1;
+            transform: scale(1);
+            padding: 0;
+        }
+
+        &--visible {
+            z-index: unset;
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+/* The display property might break transition */
+
+    &__logo {
+        padding: 1.5rem 2.5rem;
+        background: $blue;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(.7);
+        transform-origin: top;;
+
+        @mixin atSmall {
+            transform: translateX(-50%) scale(.8);
+        }
+
+        @mixin atMedium {
+            transform: translateX(-50%) scale(.9);
+        }
+        
+        @mixin atLarge {
+            transform: translateX(0);
+            left: 0;
+        }
+    }
+
+    &__graphic {
+        color: rgba(0, 0, 0, 0);
+        user-select: none;
+        /* text-indent: -9999px; */
+        
+        @mixin atLarge {
+        }
+    }
+}
