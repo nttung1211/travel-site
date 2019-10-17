@@ -1,11 +1,12 @@
 // let man = require(`./modules/Person`);
 // import Person from './modules/Person.js';
 // import $ from 'jquery';
-import RevealOnScroll from './modules/RevealOnScroll';
+import RevealOnScroll from './modules/RevealOnScroll.js';
 import Hamburger from './modules/Hamburger.js';
+import StickyHeader from './modules/StickyHeader.js';
 
 
 new Hamburger();
 new RevealOnScroll(document.querySelectorAll(`.feature-item`), `effects--fade-in`, window.innerHeight * 2 / 3);
-new RevealOnScroll(document.querySelectorAll(`.testimonial`), `effects--fade-in`, window.innerHeight / 2);
-
+new RevealOnScroll(document.querySelectorAll(`.testimonial`), `effects--fade-in`, window.innerHeight * 3 / 4);
+new StickyHeader();

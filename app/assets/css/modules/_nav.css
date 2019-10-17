@@ -1,5 +1,6 @@
 .nav {
     display: block;
+    transition: .3s ease-out;
     
     @mixin atLarge {
         padding: .5rem;

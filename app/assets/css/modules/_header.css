@@ -3,9 +3,21 @@
     z-index: 1;
     width: 100%;
     transition: background .3s ease-out;
+    position: fixed;
     
     @mixin atLarge {
         background: rgba($blue, .3);
+
+        &--sticky {
+            background: rgba($blue, .9);
+            nav {
+                padding: 0 .5rem;
+            }
+
+            .header__logo {
+                transform: scale(.6);
+            }
+        }
     }
 
     &__wrapper {
@@ -60,8 +72,9 @@
         position: absolute;
         top: 0;
         left: 50%;
+        transition: .3s ease-out;
         transform: translateX(-50%) scale(.7);
-        transform-origin: top;;
+        transform-origin: top;
 
         @mixin atSmall {
             transform: translateX(-50%) scale(.8);

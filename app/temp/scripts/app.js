@@ -78,14 +78,19 @@ var _Hamburger = __webpack_require__(2);
 
 var _Hamburger2 = _interopRequireDefault(_Hamburger);
 
+var _StickyHeader = __webpack_require__(3);
+
+var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// let man = require(`./modules/Person`);
+new _Hamburger2.default(); // let man = require(`./modules/Person`);
 // import Person from './modules/Person.js';
 // import $ from 'jquery';
-new _Hamburger2.default();
+
 new _RevealOnScroll2.default(document.querySelectorAll('.feature-item'), 'effects--fade-in', window.innerHeight * 2 / 3);
-new _RevealOnScroll2.default(document.querySelectorAll('.testimonial'), 'effects--fade-in', window.innerHeight / 2);
+new _RevealOnScroll2.default(document.querySelectorAll('.testimonial'), 'effects--fade-in', window.innerHeight * 3 / 4);
+new _StickyHeader2.default();
 
 /***/ }),
 /* 1 */
@@ -109,24 +114,24 @@ var RevealOnScroll = function () {
         this.items = items;
         this.effectClass = effectClass;
         this.offset = offset;
-        this.hide();
         this.events();
     }
 
     _createClass(RevealOnScroll, [{
-        key: "hide",
-        value: function hide() {
-            this.items.forEach(function (item) {
-                item.classList.add("effects--hidden");
-            });
-        }
-    }, {
         key: "events",
         value: function events() {
             var _this = this;
 
+            this.hide();
             window.addEventListener("scroll", function () {
                 _this.reveal(_this.items, _this.effectClass, _this.offset);
+            });
+        }
+    }, {
+        key: "hide",
+        value: function hide() {
+            this.items.forEach(function (item) {
+                item.classList.add("effects--hidden");
             });
         }
     }, {
@@ -188,6 +193,51 @@ var Hamburger = function () {
 }();
 
 exports.default = Hamburger;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var StickyHeader = function () {
+    function StickyHeader() {
+        _classCallCheck(this, StickyHeader);
+
+        this.header = document.querySelector(".header");
+        this.ourBeginning = document.querySelector("#our-beginning");
+        this.events();
+    }
+
+    _createClass(StickyHeader, [{
+        key: "events",
+        value: function events() {
+            window.addEventListener("scroll", this.stick.bind(this));
+        }
+    }, {
+        key: "stick",
+        value: function stick() {
+            if (window.pageYOffset > this.ourBeginning.offsetTop - 110) {
+                this.header.classList.add("header--sticky");
+            } else {
+                this.header.classList.remove("header--sticky");
+            }
+        }
+    }]);
+
+    return StickyHeader;
+}();
+
+exports.default = StickyHeader;
 
 /***/ })
 /******/ ]);
