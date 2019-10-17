@@ -1286,3 +1286,40 @@ a {
         }
 
 /* we can say .cross .hamburger::before */
+
+.effects--hidden {
+        opacity: 0;
+    }
+
+.effects--fade-in {
+        -webkit-animation: fadeIn 1.5s both;
+                animation: fadeIn 1.5s both;
+    }
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}

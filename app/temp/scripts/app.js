@@ -70,18 +70,83 @@
 "use strict";
 
 
-var _Hamburger = __webpack_require__(1);
+var _RevealOnScroll = __webpack_require__(1);
+
+var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
+
+var _Hamburger = __webpack_require__(2);
 
 var _Hamburger2 = _interopRequireDefault(_Hamburger);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var myHamburger = new _Hamburger2.default(); // let man = require(`./modules/Person`);
+// let man = require(`./modules/Person`);
 // import Person from './modules/Person.js';
 // import $ from 'jquery';
+new _Hamburger2.default();
+new _RevealOnScroll2.default(document.querySelectorAll('.feature-item'), 'effects--fade-in', window.innerHeight * 2 / 3);
+new _RevealOnScroll2.default(document.querySelectorAll('.testimonial'), 'effects--fade-in', window.innerHeight / 2);
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var RevealOnScroll = function () {
+    function RevealOnScroll(items, effectClass, offset) {
+        _classCallCheck(this, RevealOnScroll);
+
+        this.items = items;
+        this.effectClass = effectClass;
+        this.offset = offset;
+        this.hide();
+        this.events();
+    }
+
+    _createClass(RevealOnScroll, [{
+        key: "hide",
+        value: function hide() {
+            this.items.forEach(function (item) {
+                item.classList.add("effects--hidden");
+            });
+        }
+    }, {
+        key: "events",
+        value: function events() {
+            var _this = this;
+
+            window.addEventListener("scroll", function () {
+                _this.reveal(_this.items, _this.effectClass, _this.offset);
+            });
+        }
+    }, {
+        key: "reveal",
+        value: function reveal(items, effectClass, offset) {
+            items.forEach(function (item) {
+                if (window.pageYOffset > item.offsetTop - offset) {
+                    item.classList.add(effectClass);
+                }
+            });
+        }
+    }]);
+
+    return RevealOnScroll;
+}();
+
+exports.default = RevealOnScroll;
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

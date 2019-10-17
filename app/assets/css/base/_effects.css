@@ -1,0 +1,21 @@
+.effects {
+    &--hidden {
+        opacity: 0;
+    }
+
+    &--fade-in {
+        animation: fadeIn 1.5s both;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
