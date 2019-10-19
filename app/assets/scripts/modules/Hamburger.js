@@ -17,4 +17,4 @@ class Hamburger {
     }
 }
 
-export default Hamburger;
+export default Hamburger; 

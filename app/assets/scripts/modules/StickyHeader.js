@@ -1,7 +1,6 @@
 class StickyHeader {
     constructor() {
         this.header = document.querySelector(`.header`);
-        this.ourBeginning = document.querySelector(`#our-beginning`);
         this.events();
     }
 
@@ -10,7 +9,7 @@ class StickyHeader {
     }
 
     stick() {
-        if (window.pageYOffset > this.ourBeginning.offsetTop - 110) {
+        if (window.pageYOffset > 0) {
             this.header.classList.add(`header--sticky`);
         } else {
             this.header.classList.remove(`header--sticky`);

@@ -44,5 +44,13 @@
         @mixin atSmall {
             font-size: 1rem;
         }
+
+        &.active {
+            color: $orange;
+        }
+
+        &:hover {
+            color: $orange;
+        }
     }
 }

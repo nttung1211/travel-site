@@ -4,6 +4,7 @@
     text-decoration: none;
     padding: .8rem 1.8rem;
     display: inline-block;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
 
     &--orange {
         background: $orange;

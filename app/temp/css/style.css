@@ -585,6 +585,8 @@ a {
     text-decoration: none;
     padding: .8rem 1.8rem;
     display: inline-block;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
 }
 
 .btn--orange {
@@ -1048,7 +1050,9 @@ a {
 }
 
         .header--sticky {
-            background: rgba(47,85,114, .9);
+            -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+            background: #2f5572;
         }
             .header--sticky nav {
                 padding: 0 .5rem;
@@ -1057,6 +1061,11 @@ a {
             .header--sticky .header__logo {
                 -webkit-transform: scale(.6);
                         transform: scale(.6);
+                background: #d59541;
+            }
+
+            .header--sticky .btn {
+                background: #d59541;
             }
     }
 
@@ -1133,6 +1142,8 @@ a {
 /* The display property might break transition */
 
 .header__logo {
+        -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
         padding: 1.5rem 2.5rem;
         background: #2f5572;
         position: absolute;
@@ -1248,6 +1259,14 @@ a {
             font-size: 1rem
     }
     }
+
+.nav a.active {
+            color: #d59541;
+        }
+
+.nav a:hover {
+            color: #d59541;
+        }
 
 .hamburger {
     display: -webkit-box;
