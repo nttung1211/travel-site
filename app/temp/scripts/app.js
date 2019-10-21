@@ -93,8 +93,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import $ from 'jquery';
 new _RevealOnScroll2.default(document.querySelectorAll('.feature-item'), 'effects--fade-in', window.innerHeight * 2 / 3);
 new _RevealOnScroll2.default(document.querySelectorAll('.testimonial'), 'effects--fade-in', window.innerHeight * 3 / 4);
-new _StickyHeader2.default();
 new _Navigation2.default(document.querySelectorAll('.nav a'), document.querySelectorAll('.page-section'));
+new _StickyHeader2.default();
 new _ClickToToggle2.default(['.hamburger'], ['.hamburger', '.header', '.header__right-side'], ['hamburger--cross', 'header--is-expanded', 'header__right-side--visible']);
 
 new _ClickToToggle2.default(['.header .btn', '.large-hero .btn', '.footer .btn', '.lightbox__close'], ['.lightbox'], ['lightbox--visible'], true);

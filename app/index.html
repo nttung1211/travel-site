@@ -9,7 +9,8 @@
   <meta name="description"
     content="Your clarity. One trip away. We create soul restoring journeys that inspire you to be you.">
   <link rel="stylesheet" href="./temp/css/style.css">
-  <script src="./temp/scripts/app.js" defer></script>
+  <script src="./temp/scripts/Vendor.js"></script>
+  <script src="./temp/scripts/App.js" defer></script>
 </head>
 
 <body>
@@ -67,16 +68,16 @@
         class="headline headline--centered headline--orange headline--small headline--narrow headline--light headline--b-margin-large">
         Ever since, we&rsquo;ve been working to make travel <strong>better for everyone</strong>.</h3>
       <div class="wrapper wrapper--medium wrapper--b-margin">
-        <img srcset="assets/images/first-trip-low-res.jpg 565w, assets/images/first-trip.jpg 967w, assets/images/first-trip-hi-dpi.jpg 1952w" sizes="(min-width: 976px) 967px, 100vw" alt="Couple walking down a street.">
+        <img class="lazyload" data-srcset="assets/images/first-trip-low-res.jpg 565w, assets/images/first-trip.jpg 967w, assets/images/first-trip-hi-dpi.jpg 1952w" sizes="(min-width: 976px) 967px, 100vw" alt="Couple walking down a street.">
       </div>
       <div class="row row--gutters">
         <div class="row__4-of-12 row__4-of-12--larger">
           <picture>
-            <source media="(min-width: 1025px)" srcset="./assets/images/our-start.jpg 404w, ./assets/images/our-start-hi-dpi.jpg 808w" sizes="404px">
+            <source media="(min-width: 1025px)" data-srcset="./assets/images/our-start.jpg 404w, ./assets/images/our-start-hi-dpi.jpg 808w" sizes="404px">
               <!-- sizes is to tell the browser to calculate the screen px inside that much viewport px to choose the image with suitalbe width-->
               <!-- browser will assume sizes = viewport width if we don't specify -->
             <!-- <source media="(min-width: 800px)" srcset="./assets/images/our-start-portrait.jpg 382w, ./assets/images/our-start-portrait-hi-dpi.jpg 764w" sizes="322px"> -->
-            <img srcset="assets/images/our-start-landscape.jpg 800w, assets/images/our-start-landscape-hi-dpi.jpg 1600w" alt="Our founder, Jane Doe">
+            <img class="lazyload" data-srcset="assets/images/our-start-landscape.jpg 800w, assets/images/our-start-landscape-hi-dpi.jpg 1600w" alt="Our founder, Jane Doe">
           </picture>
         </div>
         <div class="row__8-of-12 row__8-of-12--smaller">
@@ -158,14 +159,14 @@
     </div>
   </div>
 
-  <div id="testimonials" class="page-section page-section--testimonials">
+  <div id="testimonials" class="page-section page-section--testimonials lazyload">
     <div class="wrapper wrapper--no-padding-til-small">
       <h2 class="section-title section-title--blue"><span class="section-title__image icon icon--comment"></span> Real <strong>Testimonials</strong></h2>
   
       <div class="row row--gutters row--t-padding">
         <div class="row__4-of-12">
           <div class="testimonial">
-            <img class="testimonial__avatar" sizes="160px" srcset="assets/images/testimonial-jane.jpg 160w, assets/images/testimonial-jane-hi-dpi.jpg 320w" alt="Jane Doe">
+            <img class="testimonial__avatar lazyload" sizes="160px" data-srcset="assets/images/testimonial-jane.jpg 160w, assets/images/testimonial-jane-hi-dpi.jpg 320w" alt="Jane Doe">
             <h3 class="testimonial__title">Jane Doe</h3>
             <h4 class="testimonial__subtitle">9 Time Escaper</h4>
             <p class="testimonial__text">
@@ -179,7 +180,7 @@
 
         <div class="row__4-of-12">
             <div class="testimonial">
-              <img class="testimonial__avatar" sizes="160px" srcset="assets/images/testimonial-john.jpg 160w, assets/images/testimonial-john-hi-dpi.jpg 320w" alt="John Smith">
+              <img class="testimonial__avatar lazyload" sizes="160px" data-srcset="assets/images/testimonial-john.jpg 160w, assets/images/testimonial-john-hi-dpi.jpg 320w" alt="John Smith">
               <h3 class="testimonial__title">John Smith</h3>
               <h3 class="testimonial__subtitle">4 Time Escaper</h3>
               <p class="testimonial__text">
@@ -192,7 +193,7 @@
 
         <div class="row__4-of-12">
           <div class="testimonial testimonial--no-b-margin">
-            <img class="testimonial__avatar" sizes="160px" srcset="assets/images/testimonial-cat.jpg 160w, assets/images/testimonial-cat-hi-dpi.jpg 320w" alt="Cat McKitty">
+            <img class="testimonial__avatar lazyload" sizes="160px" data-srcset="assets/images/testimonial-cat.jpg 160w, assets/images/testimonial-cat-hi-dpi.jpg 320w" alt="Cat McKitty">
             <h3 class="testimonial__title">Cat McKitty</h3>
             <h3 class="testimonial__subtitle">6 Time Escaper</h3>
             <p class="testimonial__text">

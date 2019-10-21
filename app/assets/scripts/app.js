@@ -7,10 +7,11 @@ import Navigation from './modules/Navigation.js';
 import ClickToToggle from './modules/ClickToToggle.js';
 
 
+
 new RevealOnScroll(document.querySelectorAll('.feature-item'), 'effects--fade-in', window.innerHeight * 2 / 3);
 new RevealOnScroll(document.querySelectorAll('.testimonial'), 'effects--fade-in', window.innerHeight * 3 / 4);
-new StickyHeader();
 new Navigation(document.querySelectorAll('.nav a'), document.querySelectorAll('.page-section'));
+new StickyHeader();
 new ClickToToggle(  ['.hamburger'],
                     ['.hamburger', '.header', '.header__right-side'],
                     ['hamburger--cross', 'header--is-expanded', 'header__right-side--visible']  );
