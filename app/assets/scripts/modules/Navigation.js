@@ -48,7 +48,7 @@ class Navigation {
 
     scrollSmoothly(dest) {
         window.scrollTo({
-            top: dest.offsetTop,
+            top: dest.offsetTop - 50,
             left: 0,
             behavior: "smooth"
         })

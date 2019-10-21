@@ -74,28 +74,30 @@ var _RevealOnScroll = __webpack_require__(1);
 
 var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
 
-var _Hamburger = __webpack_require__(2);
-
-var _Hamburger2 = _interopRequireDefault(_Hamburger);
-
-var _StickyHeader = __webpack_require__(3);
+var _StickyHeader = __webpack_require__(2);
 
 var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
 
-var _Navigation = __webpack_require__(4);
+var _Navigation = __webpack_require__(3);
 
 var _Navigation2 = _interopRequireDefault(_Navigation);
+
+var _ClickToToggle = __webpack_require__(4);
+
+var _ClickToToggle2 = _interopRequireDefault(_ClickToToggle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // let man = require(`./modules/Person`);
 // import Person from './modules/Person.js';
 // import $ from 'jquery';
-new _Hamburger2.default();
 new _RevealOnScroll2.default(document.querySelectorAll('.feature-item'), 'effects--fade-in', window.innerHeight * 2 / 3);
 new _RevealOnScroll2.default(document.querySelectorAll('.testimonial'), 'effects--fade-in', window.innerHeight * 3 / 4);
 new _StickyHeader2.default();
 new _Navigation2.default(document.querySelectorAll('.nav a'), document.querySelectorAll('.page-section'));
+new _ClickToToggle2.default(['.hamburger'], ['.hamburger', '.header', '.header__right-side'], ['hamburger--cross', 'header--is-expanded', 'header__right-side--visible']);
+
+new _ClickToToggle2.default(['.header .btn', '.large-hero .btn', '.footer .btn', '.lightbox__close'], ['.lightbox'], ['lightbox--visible'], true);
 
 /***/ }),
 /* 1 */
@@ -170,50 +172,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Hamburger = function () {
-    function Hamburger() {
-        _classCallCheck(this, Hamburger);
-
-        this.header = document.querySelector(".header");
-        this.hamburger = document.querySelector(".hamburger");
-        this.rightSide = document.querySelector(".header__right-side");
-        this.events();
-    }
-
-    _createClass(Hamburger, [{
-        key: "events",
-        value: function events() {
-            this.hamburger.addEventListener("click", this.toggleRightSide.bind(this));
-        }
-    }, {
-        key: "toggleRightSide",
-        value: function toggleRightSide() {
-            this.rightSide.classList.toggle("header__right-side--visible");
-            this.header.classList.toggle("header--is-expanded");
-            this.hamburger.classList.toggle("hamburger--cross");
-        }
-    }]);
-
-    return Hamburger;
-}();
-
-exports.default = Hamburger;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 var StickyHeader = function () {
     function StickyHeader() {
         _classCallCheck(this, StickyHeader);
@@ -244,7 +202,7 @@ var StickyHeader = function () {
 exports.default = StickyHeader;
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -319,7 +277,7 @@ var Navigation = function () {
         key: 'scrollSmoothly',
         value: function scrollSmoothly(dest) {
             window.scrollTo({
-                top: dest.offsetTop,
+                top: dest.offsetTop - 50,
                 left: 0,
                 behavior: "smooth"
             });
@@ -330,6 +288,67 @@ var Navigation = function () {
 }();
 
 exports.default = Navigation;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ClickToToggle = function () {
+    function ClickToToggle(triggers, affectedElements, effects, pressEscape) {
+        _classCallCheck(this, ClickToToggle);
+
+        this.triggers = triggers.map(function (trigger) {
+            return document.querySelector(trigger);
+        });
+        this.affectedElements = affectedElements.map(function (ele) {
+            return document.querySelector(ele);
+        });
+        this.effects = effects;
+        this.pressEscape = pressEscape;
+        this.toggle();
+    }
+
+    _createClass(ClickToToggle, [{
+        key: "toggle",
+        value: function toggle() {
+            var _this = this;
+
+            this.triggers.forEach(function (trigger) {
+                trigger.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    for (var i = 0; i < _this.effects.length; i++) {
+                        _this.affectedElements[i].classList.toggle(_this.effects[i]);
+                    }
+                });
+            });
+
+            if (this.pressEscape) {
+                document.addEventListener("keyup", function (e) {
+                    if (e.keyCode === 27) {
+                        for (var i = 0; i < _this.effects.length; i++) {
+                            _this.affectedElements[i].classList.remove(_this.effects[i]);
+                        }
+                    }
+                });
+            }
+        }
+    }]);
+
+    return ClickToToggle;
+}();
+
+exports.default = ClickToToggle;
 
 /***/ })
 /******/ ]);
