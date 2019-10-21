@@ -1,9 +1,26 @@
 .header {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     width: 100%;
     transition: background .3s ease-out;
-    position: fixed;
+
+    &--sticky {
+        .header__logo {
+            transform: translateX(-50%) scale(.4);
+
+            @mixin atSmall {
+                transform: translateX(-50%) scale(.6);
+            }
+        }
+        
+        .hamburger {
+            &__line,
+            &::before,
+            &::after {
+                background: $orange;
+            }
+        }
+    }
     
     @mixin atLarge {
         background: rgba($blue, .3);
