@@ -28,7 +28,7 @@ class Navigation {
         this.oldScroll = window.pageYOffset;
         return direction;
     }
-    
+
     hightlight(sections, links, direction) {
         links.forEach(link => link.classList.remove(`active`));
         for (let i = 0; i < sections.length; i++) {
