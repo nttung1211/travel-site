@@ -3,6 +3,11 @@ let gulp = require(`gulp`),
     svgSprite = require(`gulp-svg-sprite`),
     del = require(`del`),
     config = {
+        shape:{
+            spacing: {
+                padding: 1
+            }
+        },
         mode: {
             css: {
                 sprite: `sprite.svg`,
