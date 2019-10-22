@@ -1,31 +1,44 @@
+import waypoints from '../../../../node_modules/waypoints/lib/noframework.waypoints';
+
 class RevealOnScroll {
-    constructor(items, effectClass, offset) {
-        this.items = items;
-        this.effectClass = effectClass;
+    constructor(items, offset) {
+        this.items = document.querySelectorAll(items);
         this.offset = offset;
-        this.events();
+        this.hideInitially();
+        this.createWaypoints();
     }
-    
-    events() {
-        this.hide();
-        window.addEventListener(`scroll`, () => {
-            this.reveal(this.items, this.effectClass, this.offset);
-        });
-    }
-    
-    hide() {
+
+    hideInitially() {
         this.items.forEach(item => {
             item.classList.add(`effects--hidden`);
         });
     }
 
-    reveal(items, effectClass, offset) {
-        items.forEach(item => {
-            if (window.pageYOffset > item.offsetTop - offset) {
-                item.classList.add(effectClass);
-            }
+    createWaypoints() {
+        this.items.forEach(item => {
+            let offset = this.offset;
+            new Waypoint({
+                element: item,
+                handler: () => {
+                    item.classList.add(`effects--visible`);
+                },
+                offset: offset
+            })
         });
     }
+    // $(item) turn item into a jquery element then we can use .addClass
+    
+    // createWaypoints() {
+    //     this.items.each(function () {
+    //         let currentItem = this;
+    //         new Waypoint({
+    //             element: currentItem,
+    //             handler: function () {
+    //                 $(currentItem).addClass(`effects--visible`);
+    //             },
+    //         })
+    //     });
+    // }
 }
 
 export default RevealOnScroll;

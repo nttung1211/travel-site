@@ -99,7 +99,9 @@
         transition: .3s ease-out;
         transform: translateX(-50%) scale(.7);
         transform-origin: top;
-
+        color: rgba(0, 0, 0, 0);
+        display: block;
+        
         @mixin atSmall {
             transform: translateX(-50%) scale(.8);
         }
@@ -115,11 +117,7 @@
     }
 
     &__graphic {
-        color: rgba(0, 0, 0, 0);
         user-select: none;
         /* text-indent: -9999px; */
-        
-        @mixin atLarge {
-        }
     }
 }

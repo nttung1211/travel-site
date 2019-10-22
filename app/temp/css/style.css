@@ -1176,6 +1176,8 @@ a {
                 transform: translateX(-50%) scale(.7);
         -webkit-transform-origin: top;
                 transform-origin: top;
+        color: rgba(0, 0, 0, 0);
+        display: block;
     }
 
 @media (min-width: 530px) {
@@ -1204,16 +1206,11 @@ a {
     }
 
 .header__graphic {
-        color: rgba(0, 0, 0, 0);
         -webkit-user-select: none;
            -moz-user-select: none;
             -ms-user-select: none;
                 user-select: none;
-    }
-
-/* text-indent: -9999px; */
-
-@media (min-width: 1025px) {
+        /* text-indent: -9999px; */
     }
 
 .nav {
@@ -1346,6 +1343,16 @@ a {
 
 .effects--hidden {
         opacity: 0;
+        -webkit-transition: 1.5s ease-out;
+        transition: 1.5s ease-out;
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+    }
+
+.effects--visible {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
 
 .effects--fade-in {
